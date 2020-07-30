@@ -190,5 +190,86 @@ function descending(numbers) {
 
 
 
-console.log(descending([1, 3, 5, 7]));
+// console.log(descending([1, 3, 5, 7]));
 
+
+
+
+
+
+// 7. Write a function that takes in an array of numbers and returns the two smallest numbers.
+
+function twoSmallest(numbers) {
+  var smallestNumber = numbers[0];
+  var indexOfSmallest = 0;
+
+  var i = 0;
+  while (i < numbers.length) {
+    if (numbers[i] < smallestNumber) {
+      smallestNumber = numbers[i];
+      indexOfSmallest = i;
+    }
+    i++;
+  }
+  console.log(indexOfSmallest);
+
+  var j = 0;
+  var secondSmallestNumber = numbers[0];
+  if (indexOfSmallest === 0) {
+    secondSmallestNumber = numbers[1];
+  }
+  while (j < numbers.length) {
+    if (numbers[j] < secondSmallestNumber && j !== indexOfSmallest) {
+      secondSmallestNumber = numbers[j];
+    }
+    j++;
+  }  
+  return [smallestNumber, secondSmallestNumber];
+}
+
+// console.log(twoSmallest([1,5,8,23,6,3]));
+
+
+// 9. Write a function that takes in an array of numbers and returns true if all the numbers are bigger than 10, otherwise returns false.
+
+function allOverTen(numbers) {
+  var i = 0;
+
+  while (i < numbers.length) {
+    if (numbers[i] <= 10) {
+      return false;
+    }
+    i++;
+  }
+  return true;
+}
+
+// console.log(allOverTen([11,51,81,23,16,13]))
+
+
+// 10. Write a function that takes in an array of words and returns the number of times the letter "a" appeared in total.
+
+
+function countOfAs(words) {
+  var counter = 0;
+  var i = 0;
+
+  while (i < words.length) {
+    // console.log(words[i]);
+    var j = 0;
+    while (j < words[i].length) {
+      // var character = words[i][j];
+      // console.log(words[i][j]);
+      if (words[i][j] === "a") {
+        counter++;
+      }
+      j++;
+    }
+    i++;
+  }
+
+  return counter;
+}
+
+
+console.log(countOfAs(["hellaao", "haow", "arae", "you", "this", "morning"]))
